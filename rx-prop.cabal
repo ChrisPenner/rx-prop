@@ -1,0 +1,65 @@
+cabal-version:       2.0
+name:                rx-prop
+version:             0.0.0
+synopsis:            Propagator based reactive extensions library
+description:         Propagator based reactive extensions library
+homepage:            https://github.com/ChrisPenner/rx-prop
+bug-reports:         https://github.com/ChrisPenner/rx-prop/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Penner
+maintainer:          christopher.penner@gmail.com
+copyright:           2019 Chris Penner
+category:            FRP
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.4.4
+
+source-repository head
+  type:                git
+  location:            https://github.com/ChrisPenner/rx-prop.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     RxProp
+                       Prelude
+
+  build-depends:       base-noprelude ^>= 4.11.1.0
+                     , relude
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+
+test-suite rx-prop-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+
+  build-depends:       base-noprelude ^>= 4.11.1.0
+                     , rx-prop
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
